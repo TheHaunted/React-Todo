@@ -11,7 +11,7 @@ const tasks = [
   {
     task: 'Buy groceries',
     id: 2,
-    completed: true
+    completed: false
   },
   {
     task: 'Sleep',
@@ -29,6 +29,12 @@ class App extends React.Component {
     this.state = {
       tasks
     }
+  }
+
+  filterCompleted = () => {
+    this.setState({
+      tasks: this.state.tasks.filter(task => !task.completed)
+    })
   }
 
   toggleCompleted = (id) => {
@@ -64,7 +70,7 @@ class App extends React.Component {
         tasks={this.state.tasks}
         toggleCompleted={this.toggleCompleted}
         />
-        <TodoForm addTodo={this.addTodo} />
+        <TodoForm addTodo={this.addTodo} filterCompleted={this.filterCompleted} />
       </div>
     );
   }

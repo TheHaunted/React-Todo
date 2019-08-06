@@ -30,6 +30,7 @@ class TodoForm extends React.Component {
                 value={this.state.newtodo}
                 />
                 <button type="submit">Add a new Todo</button>
+                <button onClick={this.props.filterCompleted}>Clear Completed</button>
             </form>
         )
     }
