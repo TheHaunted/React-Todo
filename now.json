@@ -1,8 +1,0 @@
-{
-    "version": 2,
-    "name": "react-Todo",
-    "builds": [{ "src": "react-Todo/package.json", "use": "@now/static-build", "config": {"distDir": "build"} }],
-    "routes": [
-        { "src": "/(.*)", "dest": "react-Todo/$1" }
-    ]
-}
